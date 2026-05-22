@@ -28,7 +28,7 @@ def ttl_cache():
         return wrapper
     return decorator
 
-projects = ["Akshansh", "Akshansh-backend"]
+projects = ["Akshansh", "Akshansh-api"]
 
 @app.get("/projects")
 @ttl_cache()
