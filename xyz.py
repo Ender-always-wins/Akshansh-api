@@ -1,0 +1,41 @@
+import requests
+import fastapi
+from fastapi.middleware.cors import CORSMiddleware
+import time
+import functools
+
+app = fastapi.FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+def ttl_cache():
+    def decorator(func):
+        func = functools.cache(func)
+        func.next_clear = time.time() + 600
+
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            if time.time() >= func.next_clear:
+                func.cache_clear()
+                func.next_clear = time.time() + 600
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+projects = ["Akshansh", "Akshansh-backend"]
+
+@app.get("/projects")
+@ttl_cache()
+def get_projects():
+    responses = {}
+    for project in projects:
+        req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{project}/master/README.md")
+        print("sent request for", project)
+        responses[project] = req.text
+    return responses
