@@ -35,7 +35,7 @@ projects = ["Akshansh", "Akshansh-api"]
 def get_projects():
     responses = {}
     for project in projects:
-        req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{project}/master/README.md")
+        req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{project}/main/README.md")
         print("sent request for", project)
         responses[project] = req.text
     return responses
