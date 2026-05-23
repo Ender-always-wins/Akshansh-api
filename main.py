@@ -46,4 +46,4 @@ def get_project(project: str):
     if project not in projects:
         return fastapi.Response(status_code=404)
     req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{project}/main/README.md")
-    return req.text
+    return req.text.replace("\n","").replace("    "," ")
