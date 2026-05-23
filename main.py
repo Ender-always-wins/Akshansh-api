@@ -37,7 +37,7 @@ def get_projects():
     for project in projects:
         req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{project}/main/README.md")
         print("sent request for", project)
-        responses[project] = req.text
+        responses[project] = req.text.replace("\n","").replace("    "," ")
     return responses
 
 @app.get("/projects/{project}")
