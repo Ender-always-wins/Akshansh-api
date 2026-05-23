@@ -29,6 +29,7 @@ def ttl_cache():
     return decorator
 
 projects = ["Akshansh", "Akshansh-api"]
+projects_dict = {"Akshansh":1, "Akshansh-api":2}
 
 @app.get("/projects")
 @ttl_cache()
@@ -47,3 +48,8 @@ def get_project(project: str):
         return fastapi.Response(status_code=404)
     req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{project}/main/README.md")
     return req.text.replace("\n","").replace("    "," ")
+
+@app.get("/names")
+@ttl_cache()
+def get_names():
+    return projects_dict
