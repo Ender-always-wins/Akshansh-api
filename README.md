@@ -6,15 +6,13 @@
 </p>
 
 <p class = "projects-para">
-    This has been written entirely in python using FastAPI and hosted at <a href = "https://www.render.com" style = "text-decoration:underline;color:black">render</a>.
+    This has been written entirely in python using FastAPI and hosted at <a href = https://www.render.com id=hyperlink>render</a>.
 </p>
 
-<p class = "projects-para" style="margin-bottom:0; border-radius: 20px 20px 0px 0px;">
-    Right now, I have three endpoints which are as follows:
-</p>
-<ul class = projects-para style = "margin-top:0; border-radius: 0px 0px 20px 20px">
+<ul class = "projects-para" id = "endpoints-list">
+    Right now I have three endpoints which are as follows
     <li>
-        /projects: This fetches README files of all the projects displayed on <a href = "https://Ender-always-wins.github.io/Akshansh" style = "text-decoration:none;color:black">my site</a> and returns a JSON object.
+        /projects: This fetches README files of all the projects displayed on <a href = https://Ender-always-wins.github.io/Akshansh/ id = hyperlink>my site</a> and returns a JSON object.
     </li>
     <li>
         /projects/{project}: This fetches the README files of only one specific project at a time and returns the string obtained
