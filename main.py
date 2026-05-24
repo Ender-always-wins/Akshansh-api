@@ -35,7 +35,7 @@ blogs_dict = {"lorem":1,"ipsum":2}
 writeups = ["lorem", "ipsum"]
 writeups_dict = {"lorem":1, "ipsum":2}
 
-@app.get()
+@app.get("/")
 @ttl_cache()
 def get_all(
     type: str,
