@@ -30,6 +30,8 @@ def ttl_cache():
 
 projects = ["Akshansh", "Akshansh-api"]
 projects_dict = {"Akshansh":1, "Akshansh-api":2}
+blogs = ["lorem", "ipsum"]
+blogs_dict = {"lorem":1,"ipsum":2}
 
 @app.get("/projects")
 @ttl_cache()
@@ -37,7 +39,6 @@ def get_projects():
     responses = {}
     for project in projects:
         req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{project}/main/README.md")
-        print("sent request for", project)
         responses[project] = req.text.replace("\n","").replace("    "," ")
     return responses
 
@@ -53,3 +54,25 @@ def get_project(project: str):
 @ttl_cache()
 def get_names():
     return projects_dict
+
+@app.get("/blogs")
+@ttl_cache()
+def get_blogs():
+    responses = {}
+    for blog in blogs:
+        req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/{blog}.html")
+        responses[project] = req.text.replace("\n","").replace("    "," ")
+    return responses
+
+@app.get("/blogs/{blog}")
+@ttl_cache
+def get_blog():
+    if blog not in blogs:
+        return fastapi.Response(status_code=404)
+    req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/{blog}.html")
+    return req.text.replace("\n","").replace("    "," ")
+
+@app.get("/blog-names")
+@ttl_cache()
+def get_blog_names():
+    return blogs_dict
