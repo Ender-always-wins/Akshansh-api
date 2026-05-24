@@ -66,7 +66,7 @@ def get_blogs():
 
 @app.get("/blogs/{blog}")
 @ttl_cache()
-def get_blog():
+def get_blog(blog: str):
     if blog not in blogs:
         return fastapi.Response(status_code=404)
     req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/{blog}.html")
