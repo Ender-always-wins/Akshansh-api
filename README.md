@@ -10,14 +10,14 @@
 </p>
 
 <ul class = "projects-para" id = "endpoints-list">
-    Right now I have three endpoints which are as follows
+    Right now I support three query parameters at the root endpoint
     <li>
-        /projects: This fetches README files of all the projects displayed on <a href = https://Ender-always-wins.github.io/Akshansh/ id = hyperlink>my site</a> and returns a JSON object.
+        type: supports three values, "projects", "writeups" or "blogs"
     </li>
     <li>
-        /projects/{project}: This fetches the README files of only one specific project at a time and returns the string obtained
+        name: an optional parameter, if the name(string) is provided, only the details of that particular item will be returned
     </li>
     <li>
-        /names: This just returns a JSON object with my project names, along with a number indicating the order in which they were published.
+        names: another optional parameter, takes in a boolean value, if the said value is true then returns only a json object with the names of all items of the provided type, along with an index indicating the order in which they were published.
     </li>
 </ul>
