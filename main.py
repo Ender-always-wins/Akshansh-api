@@ -65,7 +65,7 @@ def get_blogs():
     return responses
 
 @app.get("/blogs/{blog}")
-@ttl_cache
+@ttl_cache()
 def get_blog():
     if blog not in blogs:
         return fastapi.Response(status_code=404)
