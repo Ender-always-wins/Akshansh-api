@@ -61,7 +61,7 @@ def get_blogs():
     responses = {}
     for blog in blogs:
         req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/{blog}.html")
-        responses[project] = req.text.replace("\n","").replace("    "," ")
+        responses[blog] = req.text.replace("\n","").replace("    "," ")
     return responses
 
 @app.get("/blogs/{blog}")
