@@ -78,5 +78,5 @@ def get_all(
                     responses[writeup] = req.text.replace("\n","").replace("    "," ")
                 return responses
             else:
-                req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/{name}.html")
+                req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/writeups/{name}.html")
                 return req.text.replace("\n","").replace("    "," ")
