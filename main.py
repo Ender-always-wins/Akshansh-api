@@ -28,12 +28,12 @@ def ttl_cache():
         return wrapper
     return decorator
 
-projects = ["Akshansh", "Akshansh-api"]
-projects_dict = {"Akshansh":1, "Akshansh-api":2}
-blogs = ["Akshansh", "lorem"]
-blogs_dict = {"Akshansh":1,"lorem":2}
-writeups = ["lorem", "ipsum"]
-writeups_dict = {"lorem":1, "ipsum":2}
+projects = ["Akshansh", "Akshansh-api", "blogs"]
+projects_dict = {"Akshansh":1, "Akshansh-api":2, "blogs":3}
+blogs = ["Akshansh"]
+blogs_dict = {"Akshansh":1}
+writeups = []
+writeups_dict = {}
 
 @app.get("/")
 @ttl_cache()
