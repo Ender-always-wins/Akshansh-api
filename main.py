@@ -30,8 +30,8 @@ def ttl_cache():
 
 projects = ["Akshansh", "Akshansh-api"]
 projects_dict = {"Akshansh":1, "Akshansh-api":2}
-blogs = ["lorem", "ipsum"]
-blogs_dict = {"lorem":1,"ipsum":2}
+blogs = ["Akshansh", "lorem"]
+blogs_dict = {"Akshansh":1,"lorem":2}
 writeups = ["lorem", "ipsum"]
 writeups_dict = {"lorem":1, "ipsum":2}
 
