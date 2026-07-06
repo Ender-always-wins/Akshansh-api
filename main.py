@@ -54,29 +54,29 @@ def get_all(
             if name == None:
                 responses = {}
                 for project in projects:
-                    req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{project}/main/README.md")
+                    req = requests.get(f"https://cdn.jsdelivr.net/gh/Ender-always-wins/{project}@main/README.md")
                     responses[project] = req.text.replace("\n","").replace("    "," ")
                 return responses
             else:
-                req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/{name}/main/README.md")
+                req = requests.get(f"https://cdn.jsdelivr.net/gh/Ender-always-wins/{name}@main/README.md")
                 return req.text.replace("\n","").replace("    "," ")
         if type == "blogs":
             if name == None:
                 responses = {}
                 for blog in blogs:
-                    req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/{blog}.html")
+                    req = requests.get(f"https://cdn.jsdelivr.net/gh/Ender-always-wins/blogs@main/{blog}.html")
                     responses[blog] = req.text.replace("\n","").replace("    "," ")
                 return responses
             else:
-                req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/{name}.html")
+                req = requests.get(f"https://cdn.jsdelivr.net/gh/Ender-always-wins/blogs@main/{name}.html")
                 return req.text.replace("\n","").replace("    "," ")
         if type == "writeups":
             if name == None:
                 responses = {}
                 for writeup in writeups:
-                    req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/writeups/{writeup}.html")
+                    req = requests.get(f"https://cdn.jsdelivr.net/gh/Ender-always-wins/blogs@main/writeups/{writeup}.html")
                     responses[writeup] = req.text.replace("\n","").replace("    "," ")
                 return responses
             else:
-                req = requests.get(f"https://raw.githubusercontent.com/Ender-always-wins/blogs/main/writeups/{name}.html")
+                req = requests.get(f"https://cdn.jsdelivr.net/gh/Ender-always-wins/blogs@main/writeups/{name}.html")
                 return req.text.replace("\n","").replace("    "," ")
