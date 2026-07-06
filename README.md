@@ -1,8 +1,8 @@
 <h1 class = "projects-header"> Akshansh-api </h1>
 
 <p class = "projects-para">
-    This is the backend, handling all the requests to github, and serving the data to the frontend, in order 
-    to limit the number of requests to the github servers, via caching.
+    This is the backend, handling all the requests to the cdn, and serving the data to the frontend, in order 
+    to limit the number of requests to the cdn servers, via caching.
 </p>
 
 <p class = "projects-para">
