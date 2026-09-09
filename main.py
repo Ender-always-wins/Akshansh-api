@@ -6,8 +6,6 @@ import functools
 
 app = fastapi.FastAPI()
 
-#force cache reset
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
