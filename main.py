@@ -6,6 +6,8 @@ import functools
 
 app = fastapi.FastAPI()
 
+
+#whatever
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
